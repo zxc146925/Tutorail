@@ -17,6 +17,7 @@ export class ClassComponent implements OnInit {
     this._store.subscribe( data =>{
       
       this.theClass = data['classes'];
+      let abc
       // console.log('y',this.theClass);
     })
   }

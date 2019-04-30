@@ -14,6 +14,7 @@ import { toArray, map, filter, merge, mergeMap } from "rxjs/Operators";
 export class StudentComponent implements OnInit {
 
   studentList = [];
+  abc = undefined
   constructor(private _store: Store<any>) { }
 
   ngOnInit() {
