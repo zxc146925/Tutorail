@@ -12,7 +12,7 @@ import { toArray, map, filter, merge, mergeMap } from "rxjs/Operators";
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-
+qqqqqqqqqq
   studentList = [];
   abc = undefined
   constructor(private _store: Store<any>) { }
