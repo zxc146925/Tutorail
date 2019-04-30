@@ -1,0 +1,9 @@
+<!-- <ul>
+  <li *ngFor="let student of students$">{{student.id}}--{{student.name}}-{{student.no}}</li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let theStudent of studentList">
+    {{theStudent.id}}--{{theStudent.name}}-{{theStudent.no}}-{{theStudent.class.name}}
+  </li>
+</ul>
