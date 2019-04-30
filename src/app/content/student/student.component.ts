@@ -30,8 +30,8 @@ export class StudentComponent implements OnInit {
       // console.log('x',datas['students']);
       // console.log('y',datas['classes']);
       console.log('StoreDatas',datas);
-      const students = datas["students"]["ids"];
-      const classes = datas["classes"]["ids"];
+      // const students = datas["students"]["ids"];
+      // const classes = datas["classes"]["ids"];
       this.buildStudentList(datas);
       console.log(this.studentList);
     });
