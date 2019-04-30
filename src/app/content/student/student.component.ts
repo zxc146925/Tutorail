@@ -4,6 +4,7 @@ import { Student } from 'src/app/reducers/Student/student.model';
 import * as StudentAction from "../../reducers/Student/student.actions";
 import { Observable, from, zip } from 'rxjs';
 import { toArray, map, filter, merge, mergeMap } from "rxjs/Operators";
+import { SelectedList } from 'src/app/reducers/UI/ui.actions';
 
 
 @Component({
@@ -12,13 +13,15 @@ import { toArray, map, filter, merge, mergeMap } from "rxjs/Operators";
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-qqqqqqqqqq
+
   studentList = [];
-  abc = undefined
-  constructor(private _store: Store<any>) { }
+  storeName;
+  templetView = false;
+  listValue;
+  constructor(private _store: Store<any>) { 
+  }
 
   ngOnInit() {
-
     // this._store.subscribe(datas => {
     //   // console.log('x',datas['students']);
     //   // console.log('y',datas['classes']);
@@ -28,13 +31,10 @@ qqqqqqqqqq
     // })
 
     this._store.subscribe(datas => {
-      // console.log('x',datas['students']);
-      // console.log('y',datas['classes']);
-      console.log('StoreDatas',datas);
-      // const students = datas["students"]["ids"];
-      // const classes = datas["classes"]["ids"];
+      // console.log('StoreDatas',datas);
+      this.storeName=datas['UI']['selcetedList'];
       this.buildStudentList(datas);
-      console.log(this.studentList);
+      // console.log(this.studentList);
     });
   }
 
@@ -66,5 +66,12 @@ qqqqqqqqqq
   //     console.log('thestudent', this.students$);
   //   })
   // }
+  clickstudent(value:Object){
+    this.templetView = true;
+    if(this.storeName === 'student'){
+      this.listValue = value;
+    }
+    // console.log('value',value);
+  }
 
 }
