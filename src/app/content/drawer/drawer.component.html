@@ -2,7 +2,7 @@
   <div [ngSwitch]="storeName">
     <ng-template [ngSwitchCase]="'student'">
       <ul>
-        <li *ngFor="let theStudent of studentList" (click)="clickstudent(theStudent)">
+        <li *ngFor="let theStudent of studentList">
           {{theStudent.id}}--{{theStudent.name}}-{{theStudent.no}}-{{theStudent.class.name}}
         </li>
       </ul>
@@ -19,6 +19,6 @@
     <ng-template ngSwitchDefault>
 
     </ng-template>
-    
+
   </div>
 </div>

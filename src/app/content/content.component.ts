@@ -43,7 +43,7 @@ export class ContentComponent implements OnInit {
 
   selectPage(name) {
     this.store.dispatch(new SelectedList(name));
-    this._router.navigate(['/content', name]);
+    // this._router.navigate(['/content', name]);
     // console.log('name',name);
   }
 }

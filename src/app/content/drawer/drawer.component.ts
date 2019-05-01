@@ -15,6 +15,8 @@ export class DrawerComponent implements OnInit {
   constructor(private _store: Store<string>) {
     this._store.subscribe(value => {
       this.storeName = value['UI']['selcetedList'];
+
+      console.log("_store", value)
       this.theClass = value['classes'];
       this.buildStudentList(value);
 
@@ -37,7 +39,7 @@ export class DrawerComponent implements OnInit {
       studentList => this.studentList = studentList
     );
   }
-  
+
   ngOnInit() {
 
   }
