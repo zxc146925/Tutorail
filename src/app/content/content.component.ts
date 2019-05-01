@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { LoadClasss } from '../reducers/Class/class.actions';
 import { LoadStudents } from '../reducers/Student/student.actions';
+import { Router } from '@angular/router';
+import { SelectedList } from '../reducers/UI/ui.actions';
+
+
 
 @Component({
   selector: 'app-content',
@@ -25,13 +29,21 @@ export class ContentComponent implements OnInit {
   ];
 
 
-  constructor(private store: Store<any>) {
+  class;
+  student;
+  constructor(private _router: Router, private store: Store<any>) {
     this.store.dispatch(new LoadStudents({ students: this.STUDENTS }));
     this.store.dispatch(new LoadClasss({ classs: this.CLASS }));
+
   }
 
   ngOnInit() {
-    
+
   }
 
+  selectPage(name) {
+    this.store.dispatch(new SelectedList(name));
+    this._router.navigate(['/content', name]);
+    // console.log('name',name);
+  }
 }

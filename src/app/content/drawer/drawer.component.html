@@ -1,0 +1,24 @@
+<div>
+  <div [ngSwitch]="storeName">
+    <ng-template [ngSwitchCase]="'student'">
+      <ul>
+        <li *ngFor="let theStudent of studentList" (click)="clickstudent(theStudent)">
+          {{theStudent.id}}--{{theStudent.name}}-{{theStudent.no}}-{{theStudent.class.name}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="'class'">
+      <ul>
+        <li *ngFor="let classId of theClass['ids']">
+          {{theClass['entities'][classId]['name']}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchDefault>
+
+    </ng-template>
+    
+  </div>
+</div>
