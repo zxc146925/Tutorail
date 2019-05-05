@@ -1,0 +1,28 @@
+<h2>Student List</h2>
+<ul class="heroes">
+  <li *ngFor="let student of students" >
+    <span class="badge">{{student.id}}</span> <span class="badgeNo">{{student.no}}</span> {{student.name}}
+  </li>
+</ul>
+
+<div>
+
+  <h2>Create Student</h2>
+  <div>
+    <label>id:
+      <input [(ngModel)]="newStudent.id" placeholder="id"/>
+    </label>
+  </div>
+  <div>
+    <label>no:
+      <input [(ngModel)]="newStudent.no" placeholder="no"/>
+    </label>
+  </div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="newStudent.name" placeholder="name"/>
+    </label>
+  </div>
+
+  <button (click)="postStudent()">Confirm</button>
+</div>
