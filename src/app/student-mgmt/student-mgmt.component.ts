@@ -25,7 +25,7 @@ export class StudentMgmtComponent implements OnInit {
     this._store.pipe(
       filter(state => state.students.ids.length > 0)
     ).subscribe(data => {
-      console.log('data', data);
+      // console.log('data', data);
       this.buildStudentList(data.students);
     })
   }
@@ -37,12 +37,13 @@ export class StudentMgmtComponent implements OnInit {
   buildStudentList(data) {
     from(data['ids']).pipe(
       map(theId => {
-        data['entities'][`${theId}`];
-        console.log('111111', data['entities'][`${theId}`]);
+        return data['entities'][`${theId}`];
+        // console.log('111111', data['entities'][`${theId}`]);
       }),
       toArray()
     ).subscribe(theStudent => {
       this.students = theStudent;
+      console.log('stu',this.students);
     })
   }
 
