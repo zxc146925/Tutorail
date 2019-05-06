@@ -1,0 +1,6 @@
+<!-- <button [routerLink]="['/container-content','student']">學生管理</button>
+<button [routerLink]="['/container-content','class']">課程管理</button> -->
+<button (click)="selectPage('student')">學生管理</button>
+<button (click)="selectPage('class')">課程管理</button>
+<hr>
+<router-outlet></router-outlet>

@@ -1,23 +1,23 @@
-
-import { UIActionTypes, UIActions } from './ui.actions';
+import { Action } from '@ngrx/store';
+import { UIActions, UIActionTypes } from './ui.actions';
 
 
 export interface State {
-  selcetedList : any,
+  SelectItem: string;
 }
 
 export const initialState: State = {
-  selcetedList : 'student',
+  SelectItem: ''
 };
 
 export function reducer(state = initialState, action: UIActions): State {
   switch (action.type) {
 
-    case UIActionTypes.SelectedList: {
-      state.selcetedList = action.payload;
+    case UIActionTypes.Selectitem: {
+      state.SelectItem = action.payload;
+      console.log('action', action.payload);
       return state;
     }
-
     default:
       return state;
   }

@@ -12,15 +12,16 @@ export enum ClassActionTypes {
   UpdateClasss = '[Class] Update Classs',
   DeleteClass = '[Class] Delete Class',
   DeleteClasss = '[Class] Delete Classs',
-  ClearClasss = '[Class] Clear Classs'
+  ClearClasss = '[Class] Clear Classs',
+  GetClass ='[Class] get Class',
+  GetSuccClass ='[Class] succ Class',
+  GetFailClass ='[Class] fail Class'
 }
 
 export class LoadClasss implements Action {
-  
   readonly type = ClassActionTypes.LoadClasss;
 
-  constructor(public payload: { classs: Class[] }) {
-  }
+  constructor(public payload: { classs: Class[] }) {}
 }
 
 export class AddClass implements Action {
@@ -74,6 +75,20 @@ export class DeleteClasss implements Action {
 export class ClearClasss implements Action {
   readonly type = ClassActionTypes.ClearClasss;
 }
+export class GetClass implements Action{
+  readonly type = ClassActionTypes.GetClass;
+  constructor(){}
+}
+
+export class GetSuccClass implements Action{
+  readonly type = ClassActionTypes.GetSuccClass;
+  constructor(public payload:any){}
+}
+
+export class GetFailClass implements Action{
+  readonly type = ClassActionTypes.GetFailClass;
+  constructor(public payload:any){}
+}
 
 export type ClassActions =
  LoadClasss
@@ -85,4 +100,7 @@ export type ClassActions =
  | UpdateClasss
  | DeleteClass
  | DeleteClasss
- | ClearClasss;
+ | ClearClasss
+ | GetClass
+ | GetFailClass
+ | GetSuccClass;

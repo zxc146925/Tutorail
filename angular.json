@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Demo2": {
+    "study-v4": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Demo2",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Demo2:build"
+            "browserTarget": "study-v4:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Demo2:build:production"
+              "browserTarget": "study-v4:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Demo2:build"
+            "browserTarget": "study-v4:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "Demo2-e2e": {
+    "study-v4-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Demo2:serve"
+            "devServerTarget": "study-v4:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Demo2:serve:production"
+              "devServerTarget": "study-v4:serve:production"
             }
           }
         },
@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "Demo2"
+  "defaultProject": "study-v4",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

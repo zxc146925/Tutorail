@@ -57,6 +57,10 @@ export function reducer(
       return adapter.removeAll(state);
     }
 
+    case ClassActionTypes.GetSuccClass:{
+      return adapter.addAll(action.payload.payload,state);
+    }
+
     default: {
       return state;
     }
